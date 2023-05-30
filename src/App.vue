@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <h1>Old, New, Borrowed, Boop</h1>
+  <h1 class="text-7xl">Old, New, Borrowed, Boop</h1>
 </template>
 
 <style scoped></style>
