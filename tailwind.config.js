@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: { heading: ['Great Vibes', 'cursive'] },
+      colors: {
+        gold: {
+          start: '#F1C56C',
+          end: '#DAB097'
+        }
+      }
+    },
   },
   plugins: [],
 }
