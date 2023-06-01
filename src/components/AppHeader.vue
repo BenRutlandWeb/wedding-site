@@ -3,6 +3,9 @@ import NavBar from './Navbar.vue';
 import { env } from '../helpers';
 
 const datetime = env('WEDDING_DATE');
+const venue = env('WEDDING_VENUE');
+
+const date = new Date(datetime).toLocaleDateString('pu', { month: 'long', 'day': 'numeric', 'year': 'numeric' });
 </script>
 
 <template>
@@ -12,7 +15,7 @@ const datetime = env('WEDDING_DATE');
             Ben & Sophie
         </RouterLink>
         <p>
-            <time :datetime="datetime">May 28, 2023</time> • Oxford Botanic Garden, Rose Ln, Oxford OX1 4AZ
+            <time :datetime="datetime">{{ date }}</time> • {{ venue }}
         </p>
         <p>
             <Countdown :datetime="datetime" class="block mt-2 mb-4 text-2xl" />
