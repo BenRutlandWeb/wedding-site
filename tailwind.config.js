@@ -6,7 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: { heading: ['Great Vibes', 'cursive'] },
+      fontFamily: {
+        heading: ['Great Vibes', 'cursive'],
+        sans: ['Noto Sans', 'sans-serif']
+      },
       colors: {
         gold: {
           start: '#F1C56C',
