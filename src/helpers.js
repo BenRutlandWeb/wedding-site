@@ -11,7 +11,12 @@ const ONE_DECADE = ONE_YEAR * 10;
 const ONE_CENTURY = ONE_YEAR * 100;
 const ONE_MILLENNUIM = ONE_YEAR * 1000;
 
+function env(name) {
+    return import.meta.env[`VITE_${name}`];
+}
+
 export {
+    env,
     min,
     ceil,
     floor,

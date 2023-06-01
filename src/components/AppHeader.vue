@@ -1,5 +1,8 @@
 <script setup>
 import NavBar from './Navbar.vue';
+import { env } from '../helpers';
+
+const datetime = env('WEDDING_DATE');
 </script>
 
 <template>
@@ -9,10 +12,10 @@ import NavBar from './Navbar.vue';
             Ben & Sophie
         </RouterLink>
         <p>
-            <time datetime="2023-05-28">May 28, 2023</time> • Oxford Botanic Garden, Rose Ln, Oxford OX1 4AZ
+            <time :datetime="datetime">May 28, 2023</time> • Oxford Botanic Garden, Rose Ln, Oxford OX1 4AZ
         </p>
         <p>
-            <Countdown datetime="2023-05-28" class="block mt-2 mb-4 text-2xl" />
+            <Countdown :datetime="datetime" class="block mt-2 mb-4 text-2xl" />
         </p>
     </Wrapper>
     <Wrapper :is="NavBar" class="sticky top-0 border-b border-b-gold-start py-4 bg-white">
