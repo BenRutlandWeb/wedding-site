@@ -1,6 +1,6 @@
 <script setup>
 import NavBar from './Navbar.vue';
-import { env } from '../helpers';
+import { env, config } from '../helpers';
 
 const datetime = env('WEDDING_DATE');
 const venue = env('WEDDING_VENUE');
@@ -22,12 +22,24 @@ const date = new Date(datetime).toLocaleDateString('pu', { month: 'long', 'day':
         </p>
     </Wrapper>
     <Wrapper :is="NavBar" class="sticky top-0 border-b border-b-gold-start py-4 bg-white">
-        <NavLink to="rsvp">RSVP</NavLink>
-        <NavLink to="photos">Photos</NavLink>
-        <NavLink to="events">Events</NavLink>
-        <NavLink to="wedding-party">Wedding party</NavLink>
-        <NavLink to="travel">Travel</NavLink>
-        <NavLink to="gift-registry">Gift registry</NavLink>
+        <template v-if="config('menu.rsvp')">
+            <NavLink to="rsvp">RSVP</NavLink>
+        </template>
+        <template v-if="config('menu.photos')">
+            <NavLink to="photos">Photos</NavLink>
+        </template>
+        <template v-if="config('menu.events')">
+            <NavLink to="events">Events</NavLink>
+        </template>
+        <template v-if="config('menu.wedding_party')">
+            <NavLink to="wedding-party">Wedding party</NavLink>
+        </template>
+        <template v-if="config('menu.travel')">
+            <NavLink to="travel">Travel</NavLink>
+        </template>
+        <template v-if="config('menu.gift_registry')">
+            <NavLink to="gift-registry">Gift registry</NavLink>
+        </template>
     </Wrapper>
 </template>
 

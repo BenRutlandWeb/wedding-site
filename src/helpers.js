@@ -1,3 +1,5 @@
+import configurationFile from '../config.json';
+
 const { min, max, round, ceil, floor } = Math;
 
 const ONE_SECOND = 1000;
@@ -11,11 +13,23 @@ const ONE_DECADE = ONE_YEAR * 10;
 const ONE_CENTURY = ONE_YEAR * 100;
 const ONE_MILLENNUIM = ONE_YEAR * 1000;
 
+function config(attr) {
+    let config = configurationFile;
+    let path = attr.split(".");
+
+    for (let i in path) {
+        config = config[path[i]];
+    }
+
+    return config;
+}
+
 function env(name) {
     return import.meta.env[`VITE_${name}`];
 }
 
 export {
+    config,
     env,
     min,
     ceil,

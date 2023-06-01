@@ -1,0 +1,10 @@
+{
+    "menu": {
+        "rsvp": true,
+        "photos": false,
+        "events": false,
+        "wedding_party": false,
+        "travel": true,
+        "gift_registry": true
+    }
+}

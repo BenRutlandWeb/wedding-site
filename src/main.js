@@ -8,7 +8,7 @@ const router = createRouter({
     history: createWebHistory(),
 });
 
-router.afterEach((to, from) => {
+router.afterEach((to) => {
     document.title = to.fullPath != '/' ? `${to.meta.title} | ${env('APP_NAME')}` : to.meta.title;
 });
 
