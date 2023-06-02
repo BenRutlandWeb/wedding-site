@@ -4,11 +4,17 @@ meta:
 </route>
 
 <script setup>
+import { config } from "../helpers";
+
+const schedule = config("schedule");
 </script>
 
 <template>
-    <img src="https://images.squarespace-cdn.com/content/v1/5ebc5b0285bdc72d1aee199d/1636218822977-8WW4235NPKC416VAI5KE/elmore+court+wedding+photography-45.jpg"
-         alt="" class="p-1 border-2 border-gold-start">
+  <template v-for="(text, time) in schedule" :key="time">
+    <p>{{ time }} - {{ text }}</p>
+  </template>
+
+  <img src="main-photo.jpg" alt="" class="p-1 border border-gold-start" />
 </template>
 
 <style scoped></style>
