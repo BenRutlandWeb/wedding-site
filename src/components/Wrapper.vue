@@ -8,11 +8,22 @@ defineProps({
 </script>
 
 <template>
-    <div>
-        <component :is="is" class="mx-auto max-w-5xl">
-            <slot />
-        </component>
-    </div>
+    <component :is="is" class="grid gap-x-4 wrapper">
+        <slot />
+    </component>
 </template>
 
-<style scoped></style>
+<style>
+.wrapper {
+    grid: auto / 1fr minmax(auto, theme('screens.lg')) 1fr;
+}
+
+.wrapper > * {
+    grid-column: 2 / -2;
+}
+
+.wrapper > .full {
+    grid-column: 1 / -1;
+
+}
+</style>

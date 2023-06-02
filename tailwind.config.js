@@ -14,6 +14,10 @@ export default {
         gold: {
           start: '#F1C56C',
           end: '#DAB097'
+        },
+        silver: {
+          start: '#c5c5c5',
+          end: '#dadada'
         }
       }
     },
