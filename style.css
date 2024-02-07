@@ -1,0 +1,78 @@
+:root {
+  --white: #fff;
+  --grey: #606060;
+  --green: #4e7035;
+  --content: 40rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 1rem;
+  min-height: 100dvh;
+  background: url("./sunflowers.webp") no-repeat 50% 0% / cover;
+  background-attachment: fixed;
+  font: 200 clamp(1rem, 0.0714rem + 3.5714vw, 1.5rem) / 1.5 "Mukta", sans-serif;
+  color: var(--grey);
+}
+
+article {
+  background: var(--white);
+  width: min(var(--content), 100%);
+  min-height: 80dvh;
+  margin: 20dvh auto 0;
+  box-shadow: 0 0 1rem 1rem rgb(0 0 0 / 5%);
+  text-align: center;
+}
+
+section {
+  padding: 3rem clamp(2rem, -1.7143rem + 14.2857vw, 4rem);
+  min-height: 80dvh;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  color: var(--green);
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.5rem, -3.0714rem + 21.4286vw, 5.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 0.1429rem + 7.1429vw, 3rem);
+}
+
+dl {
+  display: grid;
+  grid: auto / 1fr auto;
+  gap: 1rem;
+  direction: rtl;
+  text-align: left;
+  margin: 1rem 0;
+}
+dt {
+  text-align: right;
+}
+dd {
+  display: flex;
+  gap: inherit;
+  margin: 0;
+}
+dd::before {
+  flex: 1;
+  height: 1em;
+  overflow: hidden;
+  text-overflow: clip;
+  content: ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . ";
+}
