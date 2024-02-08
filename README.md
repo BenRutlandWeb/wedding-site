@@ -3,6 +3,5 @@
 ## Todo
 
 - local fonts
-- favicon
 - content
 - password protect?
