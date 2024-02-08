@@ -1,8 +1,27 @@
+@font-face {
+  font-family: "Great Vibes";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("GreatVibes-Regular"),
+    url("./GreatVibes-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Mukta";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: local("Mukta-ExtraLight"),
+    url("./Mukta-ExtraLight.woff2") format("woff2");
+}
+
 :root {
   --white: #fff;
   --grey: #606060;
   --green: #4e7035;
-  --content: 40rem;
+  --gold: #faeaa2;
+  --content: 60rem;
 }
 
 * {
@@ -27,9 +46,11 @@ article {
   background: var(--white);
   width: min(var(--content), 100%);
   min-height: 80dvh;
-  margin: 20dvh auto 0;
+  margin: 20dvh auto 4dvh;
   box-shadow: 0 0 1rem 1rem rgb(0 0 0 / 5%);
   text-align: center;
+  outline: 1px solid var(--gold);
+  outline-offset: -0.75rem;
 }
 
 section {
@@ -73,6 +94,5 @@ dd::before {
   height: 1em;
   overflow: hidden;
   text-overflow: clip;
-  content: ". . . . . . . . . . . . . . . . . . . . "
-    ". . . . . . . . . . . . . . . . . . . . ";
+  content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
 }

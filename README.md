@@ -2,6 +2,5 @@
 
 ## Todo
 
-- local fonts
 - content
 - password protect?
