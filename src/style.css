@@ -16,8 +16,17 @@
     url("./Mukta-ExtraLight.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Mukta";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Mukta-Regular"), url("./Mukta-Regular.woff2") format("woff2");
+}
+
 :root {
   --white: #fff;
+  --light-grey: #bbb;
   --grey: #606060;
   --green: #4e7035;
   --gold: #faeaa2;
@@ -32,6 +41,7 @@
 html {
   scrollbar-width: none;
   scroll-behavior: smooth;
+  accent-color: var(--green);
 }
 
 body {
@@ -170,4 +180,117 @@ ul {
   & li {
     margin-block-end: 0.5rem;
   }
+}
+
+form {
+  display: grid;
+  gap: 2rem;
+  text-align: start;
+  max-width: var(--slim-content);
+  margin-inline: auto;
+
+  & fieldset {
+    all: unset;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  & legend,
+  & > :not(fieldset) label {
+    all: unset;
+    font-weight: 400;
+  }
+
+  & legend {
+    margin-block-end: 0.5rem;
+  }
+
+  & label {
+    cursor: pointer;
+  }
+
+  & input:not(:where([type="checkbox"], [type="radio"])),
+  select,
+  textarea,
+  button {
+    width: 100%;
+    border: 1px solid var(--light-grey);
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font: inherit;
+    display: block;
+
+    &:not(:disabled),
+    &:not([disabled]) {
+      cursor: pointer;
+    }
+  }
+
+  & textarea {
+    resize: vertical;
+    min-height: calc(3lh + 1rem);
+  }
+
+  & input:not(:where([type="checkbox"], [type="radio"])) {
+  }
+
+  & input:where([type="checkbox"], [type="radio"]) {
+  }
+
+  & textarea {
+  }
+
+  & button {
+    --bg-color: color-mix(
+      in srgb,
+      var(--green),
+      transparent var(--transparency, 0%)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: var(--bg-color);
+    border-color: var(--bg-color);
+    color: var(--white);
+    max-width: 50%;
+    margin-inline-start: auto;
+
+    &:disabled {
+      --transparency: 50%;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 1rem;
+        height: auto;
+        aspect-ratio: 1;
+        border: 0.125rem solid;
+        border-inline-end-color: transparent;
+        border-block-end-color: transparent;
+        animation: 1s spin linear infinite;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+boop-text-input {
+  display: grid;
+  gap: 0.5rem;
+}
+
+boop-checkbox-input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
