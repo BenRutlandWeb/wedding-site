@@ -3,10 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Sophie & Ben's wedding website" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="icon" type="image/webp" href="/assets/favicon.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Old, New, Borrowed, Boop</title>
-    <link href="/style.css" rel="stylesheet" />
+
+    <script>
+      //  let params = new URL(window.location).searchParams;
+      //  const pw = params.get("pw");
+      //  if (pw != 1234) {
+      //    window.location.replace("/403.html");
+      //  }
+      //  console.log(pw);
+    </script>
+    <script type="module" crossorigin src="/assets/index-68797a9f.js"></script>
+    <link rel="stylesheet" href="/assets/index-b3fe7023.css">
   </head>
 
   <body>
@@ -25,9 +35,9 @@
       </section>
       <section>
         <div class="image-grid">
-          <img src="/the-mill-house.jpg" alt="The wedding venue" />
+          <img src="/assets/the-mill-house.jpg" alt="The wedding venue" />
           <img
-            src="/sophie-and-ben.jpg"
+            src="/assets/sophie-and-ben.jpg"
             alt="The happy couple on their engagement"
           />
         </div>
@@ -92,6 +102,78 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
+
+      <section>
+        <h2>RSVP</h2>
+
+        <form
+          action="https://script.google.com/macros/s/AKfycbxUJwky1TkftBuxacZTQ_s4-r_6O1Qyczk-Kwt-j3SNYJYAGY08gIehG7pNvyrUUrA/exec"
+          method="post"
+          onsubmit="googlesheets(event)"
+        >
+          <fieldset>
+            <legend>Will you be attending?</legend>
+            <boop-checkbox-input>
+              <input
+                type="radio"
+                name="attending"
+                value="yes"
+                id="attending:yes"
+                checked
+                required
+              />
+              <label for="attending:yes">Yes, absolutely!</label>
+            </boop-checkbox-input>
+            <boop-checkbox-input>
+              <input
+                type="radio"
+                name="attending"
+                value="no"
+                id="attending:no"
+                required
+              />
+              <label for="attending:no">No, sadly not.</label>
+            </boop-checkbox-input>
+          </fieldset>
+
+          <boop-text-input>
+            <label for="names">Full names(s)</label>
+            <input
+              type="text"
+              name="names"
+              value=""
+              id="names"
+              required
+              autocomplete="off"
+            />
+          </boop-text-input>
+
+          <boop-text-input>
+            <label for="dietary_requirements">Dietary requirements</label>
+            <textarea
+              name="dietary_requirements"
+              id="dietary_requirements"
+            ></textarea>
+          </boop-text-input>
+
+          <boop-text-input>
+            <label for="song_request">Song request</label>
+            <input
+              type="text"
+              name="song_request"
+              value=""
+              id="song_request"
+              autocomplete="off"
+            />
+          </boop-text-input>
+
+          <button type="submit">RSVP</button>
+        </form>
+        <div hidden>
+          <p>Thank you for your RSVP. We're so excited for the day!</p>
+        </div>
+      </section>
     </article>
+    
   </body>
 </html>
