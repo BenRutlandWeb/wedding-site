@@ -75,10 +75,6 @@ article {
 section {
   container: section / inline-size;
   padding: 3rem clamp(2rem, -1.7143rem + 14.2857vw, 4rem);
-
-  @media (width > 30rem) {
-    min-height: 60dvh;
-  }
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
