@@ -52,18 +52,20 @@
       <section>
         <h2>Programme</h2>
         <dl>
+          <dt>12:00</dt>
+          <dd>Guests arrive</dd>
           <dt>13:00</dt>
           <dd>Ceremony</dd>
-          <dt>14:00</dt>
+          <dt>13:30</dt>
           <dd>Reception drinks & canapes</dd>
-          <dt>17:00</dt>
-          <dd>Wedding breakfast</dd>
-          <dt>19:00</dt>
-          <dd>Speeches & cake cutting</dd>
+          <dt>15:30</dt>
+          <dd>Wedding breakfast & speeches</dd>
           <dt>19:30</dt>
           <dd>Evening guests arrive</dd>
           <dt>20:00</dt>
-          <dd>Epic party</dd>
+          <dd>Epic party & cake cutting</dd>
+          <dt>21:00</dt>
+          <dd>Evening buffet</dd>
           <dt>00:00</dt>
           <dd>Carriages</dd>
         </dl>
@@ -126,78 +128,6 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-      </section>
-
-      <section>
-        <h2>RSVP</h2>
-        <p>Kindly RSVP by 30th June.</p>
-
-        <form
-          action="https://script.google.com/macros/s/AKfycbzrsHt9Kt1gh8b3lkk0kLxDpQBwUvx70Km9yQIq7WXpAASQTaM-PWv-t-cAk-wnfZdl/exec"
-          method="post"
-          onsubmit="googlesheets(event)"
-        >
-          <fieldset>
-            <legend>Will you be attending?</legend>
-            <boop-checkbox-input>
-              <input
-                type="radio"
-                name="attending"
-                value="yes"
-                id="attending:yes"
-                checked
-                required
-              />
-              <label for="attending:yes">Yes, absolutely!</label>
-            </boop-checkbox-input>
-            <boop-checkbox-input>
-              <input
-                type="radio"
-                name="attending"
-                value="no"
-                id="attending:no"
-                required
-              />
-              <label for="attending:no">No, sadly not.</label>
-            </boop-checkbox-input>
-          </fieldset>
-
-          <boop-text-input>
-            <label for="names">Full names(s)</label>
-            <input
-              type="text"
-              name="names"
-              value=""
-              id="names"
-              required
-              autocomplete="off"
-            />
-          </boop-text-input>
-
-          <boop-text-input>
-            <label for="dietary_requirements">Dietary requirements</label>
-            <textarea
-              name="dietary_requirements"
-              id="dietary_requirements"
-            ></textarea>
-          </boop-text-input>
-
-          <boop-text-input>
-            <label for="song_request">Song request</label>
-            <input
-              type="text"
-              name="song_request"
-              value=""
-              id="song_request"
-              autocomplete="off"
-            />
-          </boop-text-input>
-
-          <button type="submit">RSVP</button>
-        </form>
-        <div hidden>
-          <p>Thank you for your RSVP. We're so excited for the day!</p>
-        </div>
       </section>
     </article>
     
